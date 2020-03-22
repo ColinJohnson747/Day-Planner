@@ -25,9 +25,13 @@ $(document).ready(function() {
   });
 
   function changeColor(){
-      var currentTime = moment().hours();
-      console.log("current time "+ currentTime);
+      var realTime = moment().hours();
+      console.log("current time "+ realTime);
 
+    $(".imput").each(function(){
+      var timeTest = parseInt($(this).attr("id"));
+      
+    })
     $
   }
   
