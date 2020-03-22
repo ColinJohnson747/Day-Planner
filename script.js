@@ -6,11 +6,16 @@ $(document).ready(function() {
   var words;
   var hourInfo;
   console.log(m.format("dddd, MMMM Do"));
-
   $("#currentDay").text(m.format("dddd, MMMM Do"));
 
 
 
+  //Save function by listening for clicks on the save button
+  $('#save').click(function(){
+    var entry = $(this).siblings(".input").val();
+    console.log(entry);
+
+  })
 
 
 
@@ -22,5 +27,7 @@ $(document).ready(function() {
 
 
 
-  
+
+
+
 });
