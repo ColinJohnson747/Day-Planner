@@ -9,7 +9,7 @@ $(document).ready(function() {
   $("#currentDay").text(m.format("dddd, MMMM Do"));
 
   renderText();
-
+  changeColor();
   //Save function by listening for clicks on the save button
   $(".save").click(function() {
     var words = $(this)
@@ -24,9 +24,10 @@ $(document).ready(function() {
     localStorage.setItem(hourInfo, JSON.stringify(words));
 
     renderText();
+    changeColor();
   });
 
-  //function to change CSS to show present, past, future
+  
 
   function renderText() {
     var saveWords9am = JSON.parse(localStorage.getItem("9am"));
@@ -68,3 +69,13 @@ $(document).ready(function() {
 
   renderText();
 });
+
+function changeColor() {
+  var currentTime = moment().hours();
+  var x =$(".hour");
+  x.innerHTML
+  
+  ;
+}
+
+changeColor();
