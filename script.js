@@ -1,15 +1,28 @@
 $(document).ready(function() {
+  //getting needed keys
+
   //var = function to call current moment/time
   var m = moment();
 
   // variables for on save button click
   var words;
   var hourInfo;
+
+  //Appending Date to Page
   console.log(m.format("dddd, MMMM Do"));
   $("#currentDay").text(m.format("dddd, MMMM Do"));
 
-  renderText();
-  changeColor();
+  //function to make hours of day, cycles through the function, appending a new hour for each cycle
+
+  for (var i = 9; i < 18; i++) {
+    //to make the hours row, the var of "i" will be the hour appended.Also learned that you can use ${} to insert data into strings when the string starts with `. Helpful!
+    var row = $(`<div data-time=${i} id='${i}' class='row'>`);
+    //to make our Hour column
+    var column1 = $('<div class="col-sm-1"> <p class="hour">' + formatAMPM(i) + '</p>')
+    //to make our fillable column
+    var column2 = $("<div class='col-sm-8 past'> <textarea id='text'" + i)
+  }
+
   //Save function by listening for clicks on the save button
   $(".save").click(function() {
     var words = $(this)
@@ -26,8 +39,6 @@ $(document).ready(function() {
     renderText();
     changeColor();
   });
-
-  
 
   function renderText() {
     var saveWords9am = JSON.parse(localStorage.getItem("9am"));
@@ -72,10 +83,8 @@ $(document).ready(function() {
 
 function changeColor() {
   var currentTime = moment().hours();
-  var x =$(".hour");
-  x.innerHTML
-  
-  ;
+  var x = $(".hour");
+  x.innerHTML;
 }
 
 changeColor();
