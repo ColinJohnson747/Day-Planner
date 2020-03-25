@@ -10,3 +10,13 @@ background-color: brown;
 .future{
 background-color: darkblue;
 }
+.jumbotron{
+    background-color: white;
+}
+
+.display-2{
+    text-align: center;
+}
+#currentDay{
+    text-align: center;
+}
