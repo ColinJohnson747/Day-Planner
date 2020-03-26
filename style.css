@@ -1,14 +1,14 @@
 .present{
-background-color: aqua;
+background-color: rgb(255, 255, 255);
 
 }
 .past{
-background-color: rgb(157, 165, 130);
+background-color: rgb(177, 77, 77);
 
 }
 
 .future{
-background-color: darkblue;
+background-color: rgb(80, 80, 177);
 }
 .jumbotron{
     background-color: white;
