@@ -19,8 +19,9 @@ $(document).ready(function() {
   //Appending Date to Page
   console.log(m.format("dddd, MMMM Do"));
   $("#currentDay").text(m.format("dddd, MMMM Do"));
-  var resetTime = console.log(m.format("HH:mm:ss"));
-  var trueZero = console.log("00:00:00");
+  var resetTime = m.format("HH:mm:ss");
+  var trueZero = "00:00:00"
+  console.log(trueZero)
   //function to make hours of day, cycles through the function, appending a new hour for each cycle
 
   for (var i = 9; i < 18; i++) {
