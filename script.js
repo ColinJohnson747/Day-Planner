@@ -65,7 +65,7 @@ $(document).ready(function() {
   }
   formatTime();
 
-  //Save function by listening for clicks on the save button
+  
 
   function updateColors() {
     var currentTime = new Date().getHours();
@@ -73,7 +73,7 @@ $(document).ready(function() {
       console.log(currentTime, $(`#${i}`).data("time"));
       if ($(`#${i}`).data("time") === currentTime) {
         $(`#text${i}`).addClass("present");
-      } else if (currentTime < $(`#${i}`).data("time")) {
+      } else if (nowTime < $(`#${i}`).data("time")) {
         $(`#text${i}`).addClass("future");
       }
     }
