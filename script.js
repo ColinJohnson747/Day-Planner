@@ -67,7 +67,7 @@ $(document).ready(function() {
   
 
   function changeColor() {
-    var nowTime =m.format("HH");
+    var nowTime =new Date().getHours());
     for (var i = 9; i < 18; i++) {
       console.log(nowTime, $(`#${i}`).data("time"));
       if ($(`#${i}`).data("time") == nowTime) {
