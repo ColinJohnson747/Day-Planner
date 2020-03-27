@@ -70,9 +70,9 @@ $(document).ready(function() {
     var nowTime =m.format("HH");
     for (var i = 9; i < 18; i++) {
       console.log(nowTime, $(`#${i}`).data("time"));
-      if ($(`#${i}`).data("time") == currentTime) {
+      if ($(`#${i}`).data("time") == nowTime) {
         $(`#text${i}`).addClass("present");
-      } else if (currentTime < $(`#${i}`).data("time")) {
+      } else if (nowTime < $(`#${i}`).data("time")) {
         $(`#text${i}`).addClass("future");
       }
     }
