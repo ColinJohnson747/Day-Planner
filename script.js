@@ -64,10 +64,10 @@ $(document).ready(function() {
   }
   formatTime();
 
-  //Save function by listening for clicks on the save button
+  
 
   function changeColor() {
-    var nowTime = new Date().getHours();
+    var nowTime =m.format("HH");
     for (var i = 9; i < 18; i++) {
       console.log(nowTime, $(`#${i}`).data("time"));
       if ($(`#${i}`).data("time") == currentTime) {
@@ -77,7 +77,7 @@ $(document).ready(function() {
       }
     }
   }
-
+//Save function by listening for clicks on the save button
   var saveBtn = $(".saveBtn");
   saveBtn.on("click", function() {
     let eventId = $(this).attr("id");
