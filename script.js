@@ -17,11 +17,12 @@ $(document).ready(function() {
   }
 
   //Appending Date to Page
-  console.log(m.format("dddd, MMMM Do"));
-  $("#currentDay").text(m.format("dddd, MMMM Do"));
-  var resetTime = m.format("HH:mm:ss");
-  var trueZero = "00:00:00"
-  console.log(trueZero)
+  function getLocalStorage(key) {
+    let value = localStorage.getItem(key);
+    if (value) {
+      $(`#text${key}`).text(value);
+    }
+  }
   //function to make hours of day, cycles through the function, appending a new hour for each cycle
 
   for (var i = 9; i < 18; i++) {
@@ -66,17 +67,21 @@ $(document).ready(function() {
 
   //Save function by listening for clicks on the save button
 
-  function changeColor() {
-    var nowTime = new Date().getHours();
+  function updateColors() {
+    var currentTime = new Date().getHours();
     for (var i = 9; i < 18; i++) {
-      console.log(nowTime, $(`#${i}`).data("time"));
-      if ($(`#${i}`).data("time") == currentTime) {
+      console.log(currentTime, $(`#${i}`).data("time"));
+      if ($(`#${i}`).data("time") === currentTime) {
         $(`#text${i}`).addClass("present");
       } else if (currentTime < $(`#${i}`).data("time")) {
         $(`#text${i}`).addClass("future");
       }
     }
   }
+
+  setInterval(function() {
+    updateColors();
+  }, 1000);
 
   var saveBtn = $(".saveBtn");
   saveBtn.on("click", function() {
@@ -89,10 +94,5 @@ $(document).ready(function() {
     localStorage.setItem(eventId, eventText);
   });
 
-  function resetForm() {
-    if (resetTime === trueZero) {
-      $(".description").empty();
-    }
-  }
-  resetForm();
+  
 });
