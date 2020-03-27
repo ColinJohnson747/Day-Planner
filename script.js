@@ -77,6 +77,10 @@ $(document).ready(function() {
       }
     }
   }
+  
+  setInterval(function() {
+    changeColor();
+}, 1000);
 //Save function by listening for clicks on the save button
   var saveBtn = $(".saveBtn");
   saveBtn.on("click", function() {
